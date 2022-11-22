@@ -1,0 +1,335 @@
+
+spline_messages = [
+    {
+    "id": "b80c3141-bbb6-529c-b3b7-c60456633e4d",
+    "name": "Spark shell",
+    "operations": {
+        "write": {
+            "outputSource": "file:/tmp/test_lineage_write.parq",
+            "append": False,
+            "id": "op-0",
+            "name": "InsertIntoHadoopFsRelationCommand",
+            "childIds": [
+                "op-1"
+            ],
+            "params": {
+                "path": "/tmp/test_lineage_write.parq"
+            },
+            "extra": {
+                "destinationType": "parquet"
+            }
+        },
+        "reads": [
+            {
+                "inputSources": [
+                    "file:/Users/user/spark-test-data/nicknames_with_rename.parq"
+                ],
+                "id": "op-2",
+                "name": "LogicalRelation",
+                "output": [
+                    "attr-0",
+                    "attr-1"
+                ],
+                "params": {
+                    "path": "/Users/user/spark-test-data/nicknames_with_rename.parq"
+                },
+                "extra": {
+                    "sourceType": "parquet"
+                }
+            }
+        ],
+        "other": [
+            {
+                "id": "op-1",
+                "name": "Project",
+                "childIds": [
+                    "op-2"
+                ],
+                "output": [
+                    "attr-0",
+                    "attr-1",
+                    "attr-2"
+                ],
+                "params": {
+                    "projectList": [
+                        {
+                            "__attrId": "attr-0"
+                        },
+                        {
+                            "__attrId": "attr-1"
+                        },
+                        {
+                            "__exprId": "expr-0"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "attributes": [
+        {
+            "id": "attr-0",
+            "dataType": "e63adadc-648a-56a0-9424-3289858cf0bb",
+            "name": "id"
+        },
+        {
+            "id": "attr-1",
+            "dataType": "75fe27b9-9a00-5c7d-966f-33ba32333133",
+            "name": "funny_nickname"
+        },
+        {
+            "id": "attr-2",
+            "dataType": "a155e715-56ab-59c4-a94b-ed1851a6984a",
+            "childRefs": [
+                {
+                    "__exprId": "expr-0"
+                }
+            ],
+            "name": "comment"
+        }
+    ],
+    "expressions": {
+        "functions": [
+            {
+                "id": "expr-0",
+                "dataType": "a155e715-56ab-59c4-a94b-ed1851a6984a",
+                "childRefs": [
+                    {
+                        "__exprId": "expr-1"
+                    }
+                ],
+                "extra": {
+                    "simpleClassName": "Alias",
+                    "_typeHint": "expr.Alias"
+                },
+                "name": "comment",
+                "params": {
+                    "name": "comment",
+                    "nonInheritableMetadataKeys": [
+                        "__dataset_id",
+                        "__col_position"
+                    ],
+                    "explicitMetadata": "{}"
+                }
+            }
+        ],
+        "constants": [
+            {
+                "id": "expr-1",
+                "dataType": "a155e715-56ab-59c4-a94b-ed1851a6984a",
+                "extra": {
+                    "simpleClassName": "Literal",
+                    "_typeHint": "expr.Literal"
+                },
+                "value": ""
+            }
+        ]
+    },
+    "systemInfo": {
+        "name": "spark",
+        "version": "3.1.2"
+    },
+    "agentInfo": {
+        "name": "spline",
+        "version": "0.7.2"
+    },
+    "extraInfo": {
+        "appName": "Spark shell",
+        "dataTypes": [
+            {
+                "_typeHint": "dt.Simple",
+                "id": "e63adadc-648a-56a0-9424-3289858cf0bb",
+                "name": "int",
+                "nullable": True
+            },
+            {
+                "_typeHint": "dt.Simple",
+                "id": "75fe27b9-9a00-5c7d-966f-33ba32333133",
+                "name": "string",
+                "nullable": True
+            },
+            {
+                "_typeHint": "dt.Simple",
+                "id": "a155e715-56ab-59c4-a94b-ed1851a6984a",
+                "name": "string",
+                "nullable": False
+            }
+        ]
+    }
+    },
+    {
+    "id": "b80c3141-bbb6-529c-b3b7-c60456633e4d",
+    "name": "Spark shell",
+    "operations": {
+        "write": {
+            "outputSource": "file:/tmp/test_lineage_write.parq",
+            "append": False,
+            "id": "op-0",
+            "name": "InsertIntoHadoopFsRelationCommand",
+            "childIds": [
+                "op-1"
+            ],
+            "params": {
+                "path": "/tmp/test_lineage_write.parq"
+            },
+            "extra": {
+                "destinationType": "parquet"
+            }
+        },
+        "reads": [],
+        "other": [
+            {
+                "id": "op-1",
+                "name": "Project",
+                "childIds": [
+                    "op-2"
+                ],
+                "output": [
+                    "attr-0",
+                    "attr-1",
+                    "attr-2"
+                ],
+                "params": {
+                    "projectList": [
+                        {
+                            "__attrId": "attr-0"
+                        },
+                        {
+                            "__attrId": "attr-1"
+                        },
+                        {
+                            "__exprId": "expr-0"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "attributes": [
+        {
+            "id": "attr-0",
+            "dataType": "e63adadc-648a-56a0-9424-3289858cf0bb",
+            "name": "id"
+        },
+        {
+            "id": "attr-1",
+            "dataType": "75fe27b9-9a00-5c7d-966f-33ba32333133",
+            "name": "funny_nickname"
+        },
+        {
+            "id": "attr-2",
+            "dataType": "a155e715-56ab-59c4-a94b-ed1851a6984a",
+            "childRefs": [
+                {
+                    "__exprId": "expr-0"
+                }
+            ],
+            "name": "comment"
+        }
+    ],
+    "expressions": {
+        "functions": [
+            {
+                "id": "expr-0",
+                "dataType": "a155e715-56ab-59c4-a94b-ed1851a6984a",
+                "childRefs": [
+                    {
+                        "__exprId": "expr-1"
+                    }
+                ],
+                "extra": {
+                    "simpleClassName": "Alias",
+                    "_typeHint": "expr.Alias"
+                },
+                "name": "comment",
+                "params": {
+                    "name": "comment",
+                    "nonInheritableMetadataKeys": [
+                        "__dataset_id",
+                        "__col_position"
+                    ],
+                    "explicitMetadata": "{}"
+                }
+            }
+        ],
+        "constants": [
+            {
+                "id": "expr-1",
+                "dataType": "a155e715-56ab-59c4-a94b-ed1851a6984a",
+                "extra": {
+                    "simpleClassName": "Literal",
+                    "_typeHint": "expr.Literal"
+                },
+                "value": ""
+            }
+        ]
+    },
+    "systemInfo": {
+        "name": "spark",
+        "version": "3.1.2"
+    },
+    "agentInfo": {
+        "name": "spline",
+        "version": "0.7.2"
+    },
+    "extraInfo": {
+        "appName": "Spark shell",
+        "dataTypes": [
+            {
+                "_typeHint": "dt.Simple",
+                "id": "e63adadc-648a-56a0-9424-3289858cf0bb",
+                "name": "int",
+                "nullable": True
+            },
+            {
+                "_typeHint": "dt.Simple",
+                "id": "75fe27b9-9a00-5c7d-966f-33ba32333133",
+                "name": "string",
+                "nullable": True
+            },
+            {
+                "_typeHint": "dt.Simple",
+                "id": "a155e715-56ab-59c4-a94b-ed1851a6984a",
+                "name": "string",
+                "nullable": False
+            }
+        ]
+    }
+    },
+    {
+    "planId": "b80c3141-bbb6-529c-b3b7-c60456633e4d",
+    "timestamp": 1642682573622,
+    "durationNs": 383981913,
+    "extra": {
+        "appId": "local-1642681660219",
+        "readMetrics": {
+            "numFiles": 1,
+            "scanTime": 12,
+            "metadataTime": 0,
+            "filesSize": 782,
+            "numOutputRows": 5
+        },
+        "writeMetrics": {
+            "numFiles": 1,
+            "numOutputBytes": 980,
+            "numOutputRows": 5,
+            "numParts": 0
+        }
+    }
+    }
+]
+
+no_asset_lineage_list = set()
+
+for spline_message in spline_messages:
+    if "planId" not in spline_message:
+        if "operations" in spline_message:
+            operations = spline_message["operations"]
+            if "write" in operations:
+                if "outputSource" in operations["write"]:
+                    asset_path = operations["write"]["outputSource"]
+            if "reads" in operations:
+                if len(operations["reads"]) < 1:
+                    no_asset_lineage_list.add(asset_path)
+
+print(no_asset_lineage_list)
